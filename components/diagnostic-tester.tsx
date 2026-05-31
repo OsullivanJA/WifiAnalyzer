@@ -143,6 +143,8 @@ export default function DiagnosticTester({ onTestComplete }: Props) {
       });
       if (error) setSaveError(error.message);
       else onTestComplete?.();
+    } else {
+      setSaveError("Not authenticated — please sign in again.");
     }
   }, [effectiveRoom, onTestComplete]);
 
